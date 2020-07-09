@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import io from "socket.io-client";
 import "./ChatRoomPage.css";
-import "./Chat.css"
 import { getChatRoomMessages, getChatRooms } from "./requests";
 
 

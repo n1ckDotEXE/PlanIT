@@ -1,10 +1,12 @@
 import React, { useState, useCallback } from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch, Link} from 'react-router-dom';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import Users from './Users/pages/Users';
 import NewItem from './Garden/pages/NewItem';
 import UpdateItem from './Garden/pages/UpdateItem';
 import UserGarden from './Garden/pages/UserGarden';
+import HomePage from "./Chat/HomePage";
+import ChatRoomPage from "./Chat/ChatRoomPage"
 import Auth from './Users/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
 
@@ -34,6 +36,12 @@ const App = () => {
         </Route>
         <Route path="/garden/:itemId">
           <UpdateItem />
+        </Route>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/" exact>
+          <ChatRoomPage />
         </Route>
         <Redirect to="/" />
       </Switch>
