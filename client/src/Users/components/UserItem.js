@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import Avatar from '../../shared/components/UIElements/Avatar';
 import Card from '../../shared/components/UIElements/Card';
 import './UserItem.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal } from 'react-bootstrap';
-
 
 const UserItem = props => {
     return (

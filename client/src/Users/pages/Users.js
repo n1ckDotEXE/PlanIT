@@ -25,7 +25,7 @@ const Users = () => {
                 footer={<Button onClick={closeIntroductionHandler}>CLOSE</Button>}
             >
                 <p>
-                    Details
+                    Details Here
                 </p>
             </Modal>
             <UsersList items={USERS} />;
