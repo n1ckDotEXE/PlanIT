@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
-const myPlaintextPassword = "s0//P4$$w0rD";
+const saltRounds = 5;
+const myPlaintextPassword = "password";
 const someOtherPlaintextPassword = "not_bacon";
 
 bcrypt.hash(myPlaintextPassword, saltRounds, function (err, hash) {
