@@ -5,8 +5,7 @@ import Users from './Users/pages/Users';
 import NewItem from './Garden/pages/NewItem';
 import UpdateItem from './Garden/pages/UpdateItem';
 import UserGarden from './Garden/pages/UserGarden';
-import HomePage from "./Chat/HomePage.js";
-import ChatRoomPage from "./Chat/ChatRoomPage"
+import Chat from "./Chat/Chat";
 import Auth from './Users/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
 
@@ -38,10 +37,7 @@ const App = () => {
           <UpdateItem />
         </Route>
         <Route path="/" exact>
-          <HomePage />
-        </Route>
-        <Route path="/" exact>
-          <ChatRoomPage />
+          <Chat />
         </Route>
         <Redirect to="/" />
       </Switch>
