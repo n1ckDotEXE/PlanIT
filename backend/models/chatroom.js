@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     "ChatRoom",
     {
       name: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
     {}
   );

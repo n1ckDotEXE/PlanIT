@@ -1,11 +1,13 @@
 const express = require("express");
 const models = require("../models");
 const router = express.Router();
+
 /* GET users listing. */
 router.get("/chatrooms", async (req, res, next) => {
   const chatRooms = await models.ChatRoom.findAll();
   res.send(chatRooms);
 });
+
 router.post("/chatroom", async (req, res, next) => {
   const room = req.body.room;
   const chatRooms = await models.ChatRoom.findAll({
