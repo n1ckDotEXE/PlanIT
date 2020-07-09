@@ -5,7 +5,7 @@ import Users from './Users/pages/Users';
 import NewItem from './Garden/pages/NewItem';
 import UpdateItem from './Garden/pages/UpdateItem';
 import UserGarden from './Garden/pages/UserGarden';
-import HomePage from "./Chat/HomePage";
+import HomePage from "./Chat/HomePage.js";
 import ChatRoomPage from "./Chat/ChatRoomPage"
 import Auth from './Users/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
