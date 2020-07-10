@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align = "right">
+<img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fchris-bk-song%2FPlanIT">
+</p>
 
-## Available Scripts
+<p align="center">
+<a href="https://github.com/chris-bk-song/PlanIT"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
+</p>
+<p align="center"><b>something something Earth ============ </b></p>
 
-In the project directory, you can run:
+<p align="center">
+<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/chris-bk-song/PlanIT">
+<img alt="npm" src="https://img.shields.io/npm/v/npm">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/chris-bk-song/PlanIT">
+<img alt="GitHub" src="https://img.shields.io/github/license/chris-bk-song/PlanIT">
+</p>
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🌲 Introduction:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Something some thing intro here =======================
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 👓 Site Preview:
+<p align="center">
+<img width=100% height=100% src="https://i.imgur.com/4Nh9tXd.png">
+</p>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  ✔️ Features List:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 🔬 Usage
+```bash
+git clone git@github.com:chris-bk-song/PlanIT.git
+cd PlanIT
+npm i
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Programming Languages Utilized:
+| **Language**                         | **Type** | **Function**                                                |
+| ------------------------------------ | -------- | ----------------------------------------------------------- |
+| HTML                                 | Frontend | Rendering webpage layouts                                   |
+| CSS                                  | Frontend | Formatting webpage layouts                                  |
+| Javascript (with Exress and Node.js) | Backend  | Perform functions to manipulate the website                 |
+| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
+| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
+| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
+| SQL (through PostgreSQL)             | Database | Store information pertaining to posts, comments, and logins |
 
-### `npm run eject`
+## 📬 Feedback
+Feel free to <a href="https://github.com/n1ckDotEXE/Seddit/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🎉 Credits:
+<p align="center">
+<a href="https://github.com/turbosnail20"><img width=20% height=20% src="https://github.com/chris-bk-song/PlanIT/blob/n1ckDotEXE-patch-1/client/img/turbosnail20.png?raw=true">
+<a href="https://github.com/J-Cook-jr"><img width=20% height=20% src="https://github.com/chris-bk-song/PlanIT/blob/n1ckDotEXE-patch-1/client/img/J-Cook-jr.png?raw=true">
+<a href="https://github.com/n1ckDotEXE"><img width=20% height=20% src="https://github.com/chris-bk-song/PlanIT/blob/n1ckDotEXE-patch-1/client/img/nickDotEXE.png?raw=true">
+<a href="https://github.com/chris-bk-song"><img width=20% height=20% src="https://github.com/chris-bk-song/PlanIT/blob/n1ckDotEXE-patch-1/client/img/chis-bk-song.png?raw=true">
+</a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔊 MIT License
+Copyright 2020 PlanIT
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
