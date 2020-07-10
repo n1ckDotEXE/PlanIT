@@ -10,7 +10,7 @@ function TopBar({ location }) {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/" active={pathname == "/"}>
+                    <Nav.Link href="/" active={pathname === "/"}>
                         Join Another Chat Room
           </Nav.Link>
                 </Nav>

@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/garden/:itemId">
           <UpdateItem />
         </Route>
-        <Route path="/" exact>
+        <Route path="/Chat" exact>
           <Chat />
         </Route>
         <Redirect to="/" />

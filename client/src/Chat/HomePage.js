@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import { Redirect } from "react-router";
 import "./HomePage.css";
-import { joinRoom } from "./requests";
+import { joinRoom } from "../requests";
 
 
 const schema = yup.object({

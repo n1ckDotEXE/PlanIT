@@ -6,8 +6,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import io from "socket.io-client";
-import "./ChatRoomPage.css";
-import { getChatRoomMessages, getChatRooms } from "./requests";
+import "./ChatRoom.css";
+import { getChatRoomMessages, getChatRooms } from "../requests.js";
 
 
 const SOCKET_IO_URL = "http://localhost:3000";

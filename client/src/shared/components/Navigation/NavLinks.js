@@ -20,6 +20,11 @@ const NavLinks = props => {
                 <NavLink to="/garden/new">ADD ITEM</NavLink>
             </li>
         )}
+         {auth.isLoggedIn && (
+            <li>
+                <NavLink to="/Chat" exact>Chat</NavLink>
+            </li>
+        )}
         {!auth.isLoggedIn && (
             <li>
                 <NavLink to="/auth">Login</NavLink>
