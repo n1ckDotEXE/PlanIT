@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UsersList from '../components/UsersList';
+import Modal from '../../shared/components/UIElements/Modal';
+import Button from '../../shared/components/FormElements/Button';
+import './Users.css';
 
 const Users = () => {
+    const [showIntroductionModal, setIntroductionModal] = useState(true);
+    const closeIntroductionHandler = () => setIntroductionModal(false);
     const USERS = [
         {
             id: '420',
@@ -11,7 +16,21 @@ const Users = () => {
         }
     ];
 
-    return <UsersList items={USERS} />;
+    return (
+        <>
+            <Modal
+                show={showIntroductionModal}
+                onCancel={closeIntroductionHandler}
+                header="This site is about something"
+                footer={<Button onClick={closeIntroductionHandler}>CLOSE</Button>}
+            >
+                <p>
+                    Details Here
+                </p>
+            </Modal>
+            <UsersList items={USERS} />;
+        </>
+    )
 };
 
 export default Users;
