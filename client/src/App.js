@@ -10,6 +10,8 @@ import Users from "./Users/pages/Users";
 import NewItem from "./Garden/pages/NewItem";
 import UpdateItem from "./Garden/pages/UpdateItem";
 import UserGarden from "./Garden/pages/UserGarden";
+import HomePage from "./Chat/HomePage";
+import ChatRoomPage from "./Chat/ChatRoomPage";
 import Auth from "./Users/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
 
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/garden/:itemId">
           <UpdateItem />
         </Route>
+        <Route path="/chat" exact component={HomePage} />
+        <Route path="/chat/chatroom" exact component={ChatRoomPage} />
         <Redirect to="/" />
       </Switch>
     );
