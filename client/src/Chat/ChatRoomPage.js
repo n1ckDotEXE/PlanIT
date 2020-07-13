@@ -66,7 +66,7 @@ function ChatRoomPage() {
     return (
         <div className="chat-room-page">
             <h1>
-                Chat Room: {getChatData().chatRoomName}. Chat Handle:{" "}
+                Chat Room: {getChatData().chatRoomName}. User Name:{" "}
                 {getChatData().handle}
             </h1>
             <div className="chat-box">
@@ -82,7 +82,9 @@ function ChatRoomPage() {
                     );
                 })}
             </div>
-            <Formik validationSchema={schema} onSubmit={handleSubmit}>
+            <Formik validationSchema={schema} onSubmit={handleSubmit}
+                initialValues={{}}>
+
                 {({
                     handleSubmit,
                     handleChange,

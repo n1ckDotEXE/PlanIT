@@ -28,7 +28,7 @@ function HomePage() {
         setRedirect(true);
     };
     if (redirect) {
-        return <Redirect to="/chatroom" />;
+        return <Redirect to="/chat/chatroompage" />;
     }
     return (
         <div className="home-page">
@@ -50,7 +50,7 @@ function HomePage() {
                         <Form noValidate onSubmit={handleSubmit}>
                             <Form.Row>
                                 <Form.Group as={Col} md="12" controlId="handle">
-                                    <Form.Label>Handle</Form.Label>
+                                    <Form.Label>User Name</Form.Label>
                                     <Form.Control
                                         type="text"
                                         name="handle"
@@ -78,7 +78,7 @@ function HomePage() {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                             </Form.Row>
-                            <Button type="submit" style={{ marginRight: "10px" }}>
+                            <Button to="chat/chatroompage" type="submit" style={{ marginRight: "10px" }}>
                                 Join
             </Button>
                         </Form>
