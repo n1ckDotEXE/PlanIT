@@ -4,13 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     "ChatRoom",
     {
       name: DataTypes.STRING,
-      allowNull: false,
-      unique: true
     },
     {}
   );
-  
-  ChatRoom.associate = function(models) {
+  ChatRoom.associate = function (models) {
     // associations can be defined here
     ChatRoom.hasMany(models.ChatMessage, {
       foreignKey: "chatRoomId",

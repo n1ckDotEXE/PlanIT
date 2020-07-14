@@ -22,7 +22,7 @@ const NavLinks = props => {
         )}
          {auth.isLoggedIn && (
             <li>
-                <NavLink to="/chat" exact>Chat</NavLink>
+                <NavLink to="/chat" exact>CHAT</NavLink>
             </li>
         )}
         {!auth.isLoggedIn && (

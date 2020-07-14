@@ -1,17 +1,21 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ChatRooms', {
+    await queryInterface.createTable('ChatMessages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        allowNull: false,
-        type: Sequelize.STRING,
-        unique: true
+      author: {
+        type: Sequelize.STRING
+      },
+      message: {
+        type: Sequelize.TEXT
+      },
+      chatRoomId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -24,6 +28,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ChatRooms');
+    await queryInterface.dropTable('ChatMessages');
   }
 };
