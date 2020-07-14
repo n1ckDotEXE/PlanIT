@@ -21,7 +21,7 @@ const Users = () => {
             <Modal
                 show={showIntroductionModal}
                 onCancel={closeIntroductionHandler}
-                header="This site is about something"
+                header="Welcome To PlanIT"
                 footer={<Button onClick={closeIntroductionHandler}>CLOSE</Button>}
             >
                 <p>

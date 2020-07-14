@@ -6,26 +6,27 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import io from "socket.io-client";
-import "./ChatRoom.css";
-import { getChatRoomMessages, getChatRooms } from "../requests.js";
+import "./ChatRoomPage.css";
+import { getChatRoomMessages, getChatRooms } from "./requests";
+import TopBar from "./TopBar";
 
 
 const SOCKET_IO_URL = "http://localhost:3000";
 const socket = io(SOCKET_IO_URL);
+
 const getChatData = () => {
     return JSON.parse(localStorage.getItem("chatData"));
 };
-
 
 const schema = yup.object({
     message: yup.string().required("Message is required"),
 });
 
-
 function ChatRoomPage() {
     const [initialized, setInitialized] = useState(false);
     const [messages, setMessages] = useState([]);
-    const [rooms, setRooms] = useState([]);
+    const [ rooms, setRooms] = useState([]);
+
     const handleSubmit = async evt => {
         const isValid = await schema.validate(evt);
         if (!isValid) {
@@ -37,25 +38,30 @@ function ChatRoomPage() {
         data.message = evt.message;
         socket.emit("message", data);
     };
+
     const connectToRoom = () => {
         socket.on("connect", data => {
             socket.emit("join", getChatData().chatRoomName);
         });
+
         socket.on("newMessage", data => {
             getMessages();
         });
         setInitialized(true);
     };
+
     const getMessages = async () => {
         const response = await getChatRoomMessages(getChatData().chatRoomName);
         setMessages(response.data);
         setInitialized(true);
     };
+
     const getRooms = async () => {
         const response = await getChatRooms();
         setRooms(response.data);
         setInitialized(true);
     };
+
     useEffect(() => {
         if (!initialized) {
             getMessages();
@@ -63,10 +69,13 @@ function ChatRoomPage() {
             getRooms();
         }
     });
+
     return (
+        <>
+        <TopBar />
         <div className="chat-room-page">
             <h1>
-                Chat Room: {getChatData().chatRoomName}. User Name:{" "}
+                Chat Room: {getChatData().chatRoomName}. Chat Handle:{" "}
                 {getChatData().handle}
             </h1>
             <div className="chat-box">
@@ -84,7 +93,6 @@ function ChatRoomPage() {
             </div>
             <Formik validationSchema={schema} onSubmit={handleSubmit}
                 initialValues={{}}>
-
                 {({
                     handleSubmit,
                     handleChange,
@@ -113,11 +121,13 @@ function ChatRoomPage() {
                             </Form.Row>
                             <Button type="submit" style={{ marginRight: "10px" }}>
                                 Send
-            </Button>
+                            </Button>
                         </Form>
                     )}
             </Formik>
         </div>
+        </>
     );
 }
+
 export default ChatRoomPage;
