@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { Redirect } from "react-router";
 import "./HomePage.css";
 import { joinRoom } from "../requests";
+import { Link } from "react-router-dom"
 
 
 const schema = yup.object({
@@ -28,7 +29,7 @@ function HomePage() {
         setRedirect(true);
     };
     if (redirect) {
-        return <Redirect to="/chat/chatroompage" />;
+        return <Redirect to="/chat/chatroom" />;
     }
     return (
         <div className="home-page">
@@ -78,9 +79,12 @@ function HomePage() {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                             </Form.Row>
-                            <Button to="chat/chatroompage" type="submit" style={{ marginRight: "10px" }}>
-                                Join
-            </Button>
+                            <Button type="submit" style={{ marginRight: "10px" }}>
+                                <Link to="/chat/chatroom">
+                                    Join
+                                </Link>
+
+                            </Button>
                         </Form>
                     )}
             </Formik>
