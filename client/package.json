@@ -21,6 +21,7 @@
     "sqlite3": "^5.0.0"
   },
   "proxy": "http://localhost:3001",
+  "secure": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
