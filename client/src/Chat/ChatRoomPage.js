@@ -11,7 +11,7 @@ import { getChatRoomMessages, getChatRooms } from "./requests";
 import TopBar from "./TopBar";
 
 
-const SOCKET_IO_URL = "http://localhost:3000";
+const SOCKET_IO_URL = "http://localhost:3001";
 const socket = io(SOCKET_IO_URL);
 
 const getChatData = () => {

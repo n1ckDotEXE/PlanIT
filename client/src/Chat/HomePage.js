@@ -9,7 +9,6 @@ import { Redirect } from "react-router";
 import "./HomePage.css";
 import { joinRoom } from "./requests";
 import TopBar from "./TopBar";
-import Modal from '../shared/components/UIElements/Modal';
 
 const schema = yup.object({
   handle: yup.string().required("Handle is required"),
@@ -37,7 +36,6 @@ function HomePage() {
 
   return (
     <>
-      <Modal>
         <TopBar />
         <div className="home-page">
           <h1>Join Chat</h1>
@@ -95,7 +93,6 @@ function HomePage() {
               )}
           </Formik>
         </div>
-      </Modal>
     </>
   );
 }
