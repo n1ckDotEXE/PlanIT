@@ -8,8 +8,8 @@ function TopBar({ location }) {
   const { pathname } = location;
 
   return (
-    <Navbar bg="primary" expand="lg" variant="dark">
-      <Navbar.Brand href="#home">Chat Room App</Navbar.Brand>
+    <Navbar bg="transparent" expand="lg" variant="light">
+      <Navbar.Brand href="#home">PlanIT Chat Room </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
