@@ -41,10 +41,14 @@ const Auth = () => {
         setIsLoginMode(prevMode => !prevMode);
     };
 
-    const authSubmitHandler = event => {
-        event.preventDefault();
+    const loginHandler = () => {
         console.log(formState.inputs);
         auth.login();
+    };
+
+    const signupHandler = () => {
+        console.log(formState.inputs);
+        auth.signup();
     };
 
     return (
@@ -58,7 +62,7 @@ const Auth = () => {
                         id="name"
                         type="text"
                         label="Your Name"
-                        validator={[VALIDATOR_REQUIRE()]}
+                        validators={[VALIDATOR_REQUIRE()]}
                         errorText="Please enter a name."
                         onInput={inputHandler}
                     />
@@ -81,9 +85,10 @@ const Auth = () => {
                     errorText="Please enter a valid password  (7 character minimum.)"
                     onInput={inputHandler}
                 />
-                <Button type="submit" disabled={!formState.isValid}>{isLoginMode ? 'LOGIN' : 'SIGNUP'}
-                </Button>
-                <Button inverse onClick={switchModeHandler}>SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
+                {isLoginMode ? <Button onClick={loginHandler} disabled={!formState.isValid}>LOGIN</Button> : <Button onClick={signupHandler} disabled={!formState.isValid}>SIGNUP</Button>}
+                {/* <Button type="submit" disabled={!formState.isValid}>{isLoginMode ? 'LOGIN' : 'SIGNUP'}
+                </Button> */}
+                <Button type="button" inverse onClick={switchModeHandler}>SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
                 </Button>
             </form>
         </Card>
