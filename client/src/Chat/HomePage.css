@@ -2,3 +2,8 @@
     width: 90vw;
     margin: 0 auto;
 }
+
+.form-control {
+    display: inline-flex;
+    width: 50%;
+}

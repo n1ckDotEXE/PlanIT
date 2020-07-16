@@ -14,16 +14,24 @@ import HomePage from "./Chat/HomePage";
 import ChatRoomPage from "./Chat/ChatRoomPage";
 import Auth from "./Users/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
+import Axios from "axios";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = useCallback(() => {
+  const [user, setUser] = useState(null);
+
+  const login = useCallback((currentUser) => {
+    setUser(currentUser)
     setIsLoggedIn(true);
   }, []);
 
   const logout = useCallback(() => {
-    setIsLoggedIn(false);
+    Axios.get('/users/auth/logout')
+    .then(() => {
+      setUser(null)
+      setIsLoggedIn(false);
+    })
   }, []);
 
   let routes;
@@ -66,7 +74,7 @@ const App = () => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+      value={{ isLoggedIn: isLoggedIn, user: user, login: login, logout: logout }}
     >
       <Router>
         <MainNavigation />
