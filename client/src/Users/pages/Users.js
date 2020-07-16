@@ -25,7 +25,7 @@ const Users = () => {
                 footer={<Button onClick={closeIntroductionHandler}>CLOSE</Button>}
             >
                 <p>
-                    Details Here
+                    PlanIT helps you connect and share with gardeners all around the world
                 </p>
             </Modal>
             <UsersList items={USERS} />;
