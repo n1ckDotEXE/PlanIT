@@ -1,15 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useEffect, useState } from "react";
 import { Formik } from "formik";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import io from "socket.io-client";
 import "./ChatRoomPage.css";
 import { getChatRoomMessages, getChatRooms } from "./requests";
 import TopBar from "./TopBar";
-
+import Container from "react-bootstrap/Container";
 
 const SOCKET_IO_URL = "http://localhost:3001";
 const socket = io(SOCKET_IO_URL);
@@ -25,7 +26,7 @@ const schema = yup.object({
 function ChatRoomPage() {
     const [initialized, setInitialized] = useState(false);
     const [messages, setMessages] = useState([]);
-    const [ rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState([]);
 
     const handleSubmit = async evt => {
         const isValid = await schema.validate(evt);
@@ -72,60 +73,71 @@ function ChatRoomPage() {
 
     return (
         <>
-        <TopBar />
-        <div className="chat-room-page">
-            <h1>
-                Chat Room: {getChatData().chatRoomName}. Chat Handle:{" "}
-                {getChatData().handle}
-            </h1>
-            <div className="chat-box">
-                {messages.map((m, i) => {
-                    return (
-                        <div className="col-12" key={i}>
-                            <div className="row">
-                                <div className="col-2">{m.author}</div>
-                                <div className="col">{m.message}</div>
-                                <div className="col-3">{m.createdAt}</div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-            <Formik validationSchema={schema} onSubmit={handleSubmit}
-                initialValues={{}}>
-                {({
-                    handleSubmit,
-                    handleChange,
-                    handleBlur,
-                    values,
-                    touched,
-                    isInvalid,
-                    errors,
-                }) => (
-                        <Form noValidate onSubmit={handleSubmit}>
-                            <Form.Row>
-                                <Form.Group as={Col} md="12" controlId="handle">
-                                    <Form.Label>Message</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        name="message"
-                                        placeholder="Message"
-                                        value={values.message || ""}
-                                        onChange={handleChange}
-                                        isInvalid={touched.message && errors.message}
-                                    />
-                                    <Form.Control.Feedback type="invalid">
-                                        {errors.message}
-                                    </Form.Control.Feedback>
-                                </Form.Group>
-                            </Form.Row>
-                            <Button type="submit" style={{ marginRight: "10px" }}>
-                                Send
-                            </Button>
-                        </Form>
-                    )}
-            </Formik>
-        </div>
+            <TopBar />
+            <Container fluid>
+                <div className="chat-room-page">
+                    <header1>
+                        Chat Room: {getChatData().chatRoomName}.&nbsp;&nbsp;&nbsp;&nbsp;Username: {" "} {getChatData().handle}
+                    </header1> 
+
+                    <div className="chat-box">
+                        {messages.map((m, i) => {
+                            return (
+                                <div className="col-12" key={i}>
+                                    <div className="row">
+                                        <div className="col-2">{m.author}</div>
+                                        <div className="col">{m.message}</div>
+                                        <div className="col-3">{m.createdAt}</div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+
+                    <Formik validationSchema={schema} onSubmit={handleSubmit}
+                        initialValues={{}}>
+                        {({
+                            handleSubmit,
+                            handleChange,
+                            handleBlur,
+                            values,
+                            touched,
+                            isInvalid,
+                            errors,
+                        }) => (
+                                <Form noValidate onSubmit={handleSubmit}>
+                                    <Form.Row>
+                                        <Form.Group as={Col} controlId="handle">
+                                            <Col sm={80}>
+                                                <Form.Control
+                                                    size="lg"
+                                                    type="text"
+                                                    name="message"
+                                                    placeholder="Message"
+                                                    value={values.message || ""}
+                                                    onChange={handleChange}
+                                                    isInvalid={touched.message && errors.message}
+                                                />
+
+                                                <Form.Control.Feedback type="invalid">
+                                                    {errors.message}
+                                                </Form.Control.Feedback>
+                                            
+                                            
+                                                <Button variant="success" size="lg" type="submit" style={{ marginLeft: "0px" }}>
+                                                    Send
+                                                </Button>{' '}
+                                            </Col>
+
+                                        </Form.Group>
+                                    </Form.Row>
+
+                                </Form>
+                            )}
+                    </Formik>
+                </div>
+            </Container>
         </>
     );
 }
