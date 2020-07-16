@@ -57,12 +57,12 @@ function HomePage() {
           }) => (
               <Form noValidate onSubmit={handleSubmit}>
                 <Form.Row>
-                  <Form.Group as={Col} md="12" controlId="handle">
-                    <Form.Label>Handle</Form.Label>
+                  <Form.Group as={Col} md="7" controlId="Username">
+                    <Form.Label></Form.Label>
                     <Form.Control
                       type="text"
                       name="handle"
-                      placeholder="Handle"
+                      placeholder="Username"
                       value={values.handle || ""}
                       onChange={handleChange}
                       isInvalid={touched.handle && errors.handle}
@@ -71,8 +71,8 @@ function HomePage() {
                       {errors.firstName}
                     </Form.Control.Feedback>
                   </Form.Group>
-                  <Form.Group as={Col} md="12" controlId="chatRoomName">
-                    <Form.Label>Chat Room Name</Form.Label>
+                  <Form.Group as={Col} md="7" controlId="chatRoomName">
+                    <Form.Label></Form.Label>
                     <Form.Control
                       type="text"
                       name="chatRoomName"
