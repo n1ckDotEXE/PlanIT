@@ -6,7 +6,6 @@ const session = require("express-session");
 var logger = require("morgan");
 const models = require("./models");
 
-var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var chatRoomRouter = require("./routes/chatRoom");
 
