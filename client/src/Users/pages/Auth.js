@@ -6,8 +6,9 @@ import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../s
 import { useForm } from '../../shared/hooks/form-hook';
 import { AuthContext } from '../../shared/context/auth-context';
 import './Auth.css';
+import Axios from 'axios';
 
-const Auth = () => {
+const Auth = (props) => {
     const auth = useContext(AuthContext);
     const [isLoginMode, setIsLoginMode] = useState(true);
     const [formState, inputHandler, setFormData] = useForm({
@@ -41,24 +42,47 @@ const Auth = () => {
         setIsLoginMode(prevMode => !prevMode);
     };
 
-    const authSubmitHandler = event => {
-        event.preventDefault();
+    const loginHandler = () => {
         console.log(formState.inputs);
-        auth.login();
+        Axios.post("/users/auth/login", {
+            email: formState.inputs.email.value,
+            password: formState.inputs.password.value,
+        })
+        .then((res) => {
+            if(res.status == 200){
+                auth.login(res.body);
+            }
+        }) 
     };
+
+    const signupHandler = () => {
+        console.log(formState.inputs);
+        Axios.post("/users/auth/register", {
+            name_input: formState.inputs.name.value,
+            email_input: formState.inputs.email.value,
+            password_input: formState.inputs.password.value,
+        })
+        .then((res) => {
+            if(res.status == 201){
+                auth.login();
+            }
+        }) 
+    };
+
 
     return (
         <Card className="authentication">
             <h2>Login Required</h2>
             <hr />
-            <form onSubmit={authSubmitHandler}>
+            <form>
                 {!isLoginMode &&
+                    
                     <Input
                         element="input"
                         id="name"
                         type="text"
                         label="Your Name"
-                        validator={[VALIDATOR_REQUIRE()]}
+                        validators={[VALIDATOR_REQUIRE()]}
                         errorText="Please enter a name."
                         onInput={inputHandler}
                     />
@@ -81,9 +105,10 @@ const Auth = () => {
                     errorText="Please enter a valid password  (7 character minimum.)"
                     onInput={inputHandler}
                 />
-                <Button type="submit" disabled={!formState.isValid}>{isLoginMode ? 'LOGIN' : 'SIGNUP'}
-                </Button>
-                <Button inverse onClick={switchModeHandler}>SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
+                {isLoginMode ? <Button type="button" onClick={loginHandler} disabled={!formState.isValid}>LOGIN</Button> : <Button type="button" onClick={signupHandler} disabled={!formState.isValid}>SIGNUP</Button>}
+                {/* <Button type="submit" disabled={!formState.isValid}>{isLoginMode ? 'LOGIN' : 'SIGNUP'}
+                </Button> */}
+                <Button type="button" inverse onClick={switchModeHandler}>SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
                 </Button>
             </form>
         </Card>

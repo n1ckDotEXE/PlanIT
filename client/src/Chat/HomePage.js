@@ -10,7 +10,6 @@ import "./HomePage.css";
 import { joinRoom } from "./requests";
 import TopBar from "./TopBar";
 
-
 const schema = yup.object({
   handle: yup.string().required("Handle is required"),
   chatRoomName: yup.string().required("Chat room is required"),
@@ -37,15 +36,14 @@ function HomePage() {
 
   return (
     <>
-      <TopBar />
-      <div className="home-page">
-        <h1>Join Chat</h1>
-        <Formik
-          validationSchema={schema}
-          onSubmit={handleSubmit}
-          initialValues={JSON.parse(localStorage.getItem("chatData") || "{}")}
-        >
-
+        <TopBar />
+        <div className="home-page">
+          <h1>Join Chat</h1>
+          <Formik
+            validationSchema={schema}
+            onSubmit={handleSubmit}
+            initialValues={JSON.parse(localStorage.getItem("chatData") || "{}")}
+          >
           {({
             handleSubmit,
             handleChange,
@@ -89,11 +87,11 @@ function HomePage() {
                 </Form.Row>
                 <Button onSubmit={handleSubmit} type="submit" style={{ marginRight: "10px" }}>
                   Join
-            </Button>
-              </Form>
-            )}
-        </Formik>
-      </div>
+                </Button>
+                </Form>
+              )}
+          </Formik>
+        </div>
     </>
   );
 }
