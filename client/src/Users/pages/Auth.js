@@ -76,6 +76,7 @@ const Auth = (props) => {
             <hr />
             <form>
                 {!isLoginMode &&
+                    
                     <Input
                         element="input"
                         id="name"
