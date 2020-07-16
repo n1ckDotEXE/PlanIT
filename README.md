@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/chris-bk-song/PlanIT"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
+<a href="https://dc-planit.herokuapp.com/"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
 </p>
 <p align="center"><b>something something Earth ============ </b></p>
 
