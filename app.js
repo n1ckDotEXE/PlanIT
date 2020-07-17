@@ -1,6 +1,4 @@
-var Honeybadger = require("honeybadger").configure({
-  apiKey: "81043b13",
-});
+var Honeybadger = require("honeybadger");
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -31,6 +29,10 @@ app.use(
     },
   })
 );
+
+Honeybadger.configure({
+  apiKey: '81043b13'
+});
 
 app.use("/users", usersRouter);
 app.use("/chatroom", chatRoomRouter);
