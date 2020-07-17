@@ -21,11 +21,11 @@ const Users = () => {
             <Modal
                 show={showIntroductionModal}
                 onCancel={closeIntroductionHandler}
-                header="Welcome To PlanIT"
-                footer={<Button onClick={closeIntroductionHandler}>CLOSE</Button>}
+                header={<center>🌾 Welcome To PlanIT! 🌿</center>}
+                footer={<Button onClick={closeIntroductionHandler}>X</Button>}
             >
                 <p>
-                    PlanIT helps you connect and share with gardeners all around the world
+                    <center>PlanIT is where gardeners from around the world come to learn, teach, and further their gardening knowledge. Share your personal experiences while also helping others along the way.<b> Please be kind to your fellow gardeners! Welcome to PlanIT and Happy Gardening!</b> </center>
                 </p>
             </Modal>
             <UsersList items={USERS} />;
