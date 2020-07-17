@@ -12,8 +12,8 @@ import { getChatRoomMessages, getChatRooms } from "./requests";
 import TopBar from "./TopBar";
 import Container from "react-bootstrap/Container";
 
-const SOCKET_IO_URL = "http://localhost:3001";
-const socket = io(SOCKET_IO_URL);
+// const SOCKET_IO_URL = "http://localhost:3001";
+const socket = io();
 
 const getChatData = () => {
     return JSON.parse(localStorage.getItem("chatData"));
@@ -28,24 +28,26 @@ function ChatRoomPage() {
     const [messages, setMessages] = useState([]);
     const [rooms, setRooms] = useState([]);
 
-    const handleSubmit = async evt => {
+    const handleSubmit = async (evt, {resetForm}) => {
         const isValid = await schema.validate(evt);
         if (!isValid) {
             return;
         }
+       
         const data = Object.assign({}, evt);
         data.chatRoomName = getChatData().chatRoomName;
         data.author = getChatData().handle;
         data.message = evt.message;
         socket.emit("message", data);
+        resetForm();
     };
 
     const connectToRoom = () => {
-        socket.on("connect", data => {
+        socket.on("connect", data=> {
             socket.emit("join", getChatData().chatRoomName);
         });
 
-        socket.on("newMessage", data => {
+        socket.on("newMessage", data=> {
             getMessages();
         });
         setInitialized(true);
