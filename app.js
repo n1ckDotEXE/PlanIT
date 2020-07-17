@@ -1,11 +1,15 @@
-var Honeybadger = require("honeybadger");
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 const session = require("express-session");
 var logger = require("morgan");
+var Honeybadger = require('honeybadger');
 const models = require("./models");
+
+Honeybadger.configure({
+  apiKey: process.env.HONEYBADGER_API_KEY
+});
 
 var usersRouter = require("./routes/users");
 var chatRoomRouter = require("./routes/chatRoom");
@@ -29,10 +33,6 @@ app.use(
     },
   })
 );
-
-Honeybadger.configure({
-  apiKey: '81043b13'
-});
 
 app.use("/users", usersRouter);
 app.use("/chatroom", chatRoomRouter);
