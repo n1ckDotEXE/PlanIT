@@ -1,17 +1,22 @@
-var Honeybadger = require("honeybadger");
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 const session = require("express-session");
 var logger = require("morgan");
+var Honeybadger = require('honeybadger');
 const models = require("./models");
+
+Honeybadger.configure({
+  apiKey: process.env.HONEYBADGER_API_KEY
+});
 
 var usersRouter = require("./routes/users");
 var chatRoomRouter = require("./routes/chatRoom");
 
 var app = express();
 const cors = require("cors");
+app.use(Honeybadger.requestHandler);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,10 +33,6 @@ app.use(
     },
   })
 );
-
-Honeybadger.configure({
-  apiKey: '81043b13'
-});
 
 app.use("/users", usersRouter);
 app.use("/chatroom", chatRoomRouter);
@@ -79,4 +80,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+app.use(Honeybadger.errorHandler);
 module.exports = app;
