@@ -1,3 +1,6 @@
+var Honeybadger = require("honeybadger").configure({
+  apiKey: "81043b13",
+});
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -11,7 +14,7 @@ var chatRoomRouter = require("./routes/chatRoom");
 
 var app = express();
 const cors = require("cors");
-
+app.use(Honeybadger.requestHandler);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -75,5 +78,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
+app.use(Honeybadger.errorHandler);
 module.exports = app;
