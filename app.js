@@ -5,7 +5,6 @@ var cookieParser = require("cookie-parser");
 const session = require("express-session");
 var logger = require("morgan");
 const models = require("./models");
-
 var usersRouter = require("./routes/users");
 var chatRoomRouter = require("./routes/chatRoom");
 
