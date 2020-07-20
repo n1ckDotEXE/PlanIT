@@ -17,7 +17,7 @@ const schema = yup.object({
 
 function HomePage() {
   const [redirect, setRedirect] = useState(false);
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt, {resetForm}) => {
     console.log("triggering")
     const isValid = await schema.validate(evt);
     if (!isValid) {
@@ -26,6 +26,7 @@ function HomePage() {
     localStorage.setItem("chatData", JSON.stringify(evt));
     await joinRoom(evt.chatRoomName);
     setRedirect(true);
+    resetForm();
   };
 
   useEffect(() => { });

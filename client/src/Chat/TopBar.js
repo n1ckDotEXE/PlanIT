@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import { NavLink } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 
 
@@ -13,9 +14,9 @@ function TopBar({ location }) {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/chat" active={pathname === "/chat"}>
+          <NavLink to="/chat" active={pathname === "/chat"}>
             Join Another Chat Room
-          </Nav.Link>
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

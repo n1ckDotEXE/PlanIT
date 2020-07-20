@@ -57,15 +57,18 @@ io.on("connection", (socket) => {
     const chatRoom = await models.ChatRoom.findAll({
       where: { name: chatRoomName },
     });
+    
     const chatRoomId = chatRoom[0].id;
     const chatMessage = await models.ChatMessage.create({
       chatRoomId,
       author,
       message: message,
     });
-    io.emit("newMessage", chatMessage);
+    
+    io.emit("newMessage", {chatMessage});
   });
 });
+
 
 // error handler
 app.use(function (err, req, res, next) {
