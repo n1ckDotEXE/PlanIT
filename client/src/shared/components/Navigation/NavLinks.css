@@ -16,7 +16,7 @@ margin: 1rem;
 
 .nav-links a {
 border: 1px solid transparent;
-color: #292929;
+color: whitesmoke;
 text-decoration: none;
 padding: 0.5rem;
 }
@@ -25,8 +25,9 @@ padding: 0.5rem;
 .nav-links a:active,
 .nav-links a.active {
 background: #99b898;
-border-color: #292929;
+border-color: whitesmoke;
 color: #292929;
+border-radius: 6px;
 }
 
 .nav-links button {
