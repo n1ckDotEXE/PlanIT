@@ -22,7 +22,7 @@ const GardenList = props => {
                 <GardenItem
                     key={garden.id}
                     id={garden.id}
-                    image={garden.imageUrl}
+                    // image={garden.imageUrl}
                     title={garden.title}
                     description={garden.description}
                     address={garden.address}

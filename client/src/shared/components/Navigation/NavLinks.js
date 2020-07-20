@@ -20,7 +20,7 @@ const NavLinks = props => {
                 <NavLink to="/garden/new">ADD ITEM</NavLink>
             </li>
         )}
-         {auth.isLoggedIn && (
+        {auth.isLoggedIn && (
             <li>
                 <NavLink to="/chat" exact>CHAT</NavLink>
             </li>
@@ -32,7 +32,7 @@ const NavLinks = props => {
         )}
         {auth.isLoggedIn && (
             <li>
-            <button onClick={auth.logout}>LOGOUT</button>
+                <button onClick={auth.logout}>LOGOUT</button>
             </li>
         )}
     </ul>

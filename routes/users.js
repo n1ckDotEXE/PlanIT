@@ -3,15 +3,6 @@ const router = express.Router();
 const db = require('../models'); 
 const bcrypt = require('bcrypt');
 
-router.use(express.static('./public'));
-
-router.get('/create-account', (req, res) => {
-  res.render('index.ejs', { 
-    display:"true", 
-    shown:"shown"
-  });
-}); 
-
 router.post('/auth/register', (req,res,) =>{ 
   const name = req.body.name_input;
   const email = req.body.email_input;
@@ -59,5 +50,30 @@ router.get('/auth/logout', (req, res) => {
     message: 'logged out!'
   })
 })
+
+router.get('/', (req, res) => {
+  db.Users.findAll(
+   {
+     include: [db.Gardens]
+   } 
+  )
+  .then(users => {
+    res.status(200).json(users)
+  })
+})
+
+router.get('/:id', (req, res) => {
+  db.Users.findByPk(
+    req.params.id,
+   {
+     include: [db.Gardens]
+   } 
+  )
+  .then(users => {
+    res.status(200).json(users)
+  })
+})
+
+
 
 module.exports = router;

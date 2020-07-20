@@ -49,7 +49,7 @@ const Auth = (props) => {
             password: formState.inputs.password.value,
         })
         .then((res) => {
-            if(res.status == 200){
+            if(res.status === 200){
                 auth.login(res.body);
             }
         }) 
@@ -63,7 +63,7 @@ const Auth = (props) => {
             password_input: formState.inputs.password.value,
         })
         .then((res) => {
-            if(res.status == 201){
+            if(res.status === 201){
                 auth.login();
             }
         }) 
