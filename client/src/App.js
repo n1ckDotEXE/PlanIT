@@ -22,6 +22,7 @@ const App = () => {
   const [user, setUser] = useState(null);
 
   const login = useCallback((currentUser) => {
+    console.log(currentUser)
     setUser(currentUser)
     setIsLoggedIn(true);
   }, []);
@@ -29,8 +30,8 @@ const App = () => {
   const logout = useCallback(() => {
     Axios.get('/users/auth/logout')
     .then(() => {
-      setUser(null)
       setIsLoggedIn(false);
+      setUser(null)
     })
   }, []);
 
