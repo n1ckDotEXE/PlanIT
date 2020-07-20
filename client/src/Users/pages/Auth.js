@@ -25,11 +25,13 @@ const Auth = (props) => {
 
     const switchModeHandler = () => {
         if (!isLoginMode) {
-            setFormData({
-                ...formState.inputs,
-                name: undefined
-            }, 
-            formState.inputs.email.isValid && formState.inputs.password.isValid
+            const formData = {
+                email: {...formState.inputs.email},
+                password: {...formState.inputs.password},
+            };
+            setFormData(
+                formData, 
+                formState.inputs.email.isValid && formState.inputs.password.isValid
             );
         } else {
             setFormData({...formState.inputs,
@@ -50,7 +52,7 @@ const Auth = (props) => {
         })
         .then((res) => {
             if(res.status === 200){
-                auth.login(res.body);
+                auth.login(res.data);
             }
         }) 
     };
@@ -64,11 +66,10 @@ const Auth = (props) => {
         })
         .then((res) => {
             if(res.status === 201){
-                auth.login();
+                auth.login(res.data);
             }
         }) 
     };
-
 
     return (
         <Card className="authentication">
@@ -106,8 +107,6 @@ const Auth = (props) => {
                     onInput={inputHandler}
                 />
                 {isLoginMode ? <Button type="button" onClick={loginHandler} disabled={!formState.isValid}>LOGIN</Button> : <Button type="button" onClick={signupHandler} disabled={!formState.isValid}>SIGNUP</Button>}
-                {/* <Button type="submit" disabled={!formState.isValid}>{isLoginMode ? 'LOGIN' : 'SIGNUP'}
-                </Button> */}
                 <Button type="button" inverse onClick={switchModeHandler}>SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
                 </Button>
             </form>

@@ -16,7 +16,6 @@ const Users = () => {
             console.log(res.data)
             setUsers(res.data)
         })
-        
     }, [])
 
     return (
