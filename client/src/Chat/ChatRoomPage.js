@@ -12,7 +12,6 @@ import { getChatRoomMessages, getChatRooms } from "./requests";
 import TopBar from "./TopBar";
 import Container from "react-bootstrap/Container";
 
-// const SOCKET_IO_URL = "http://localhost:3001";
 const socket = io();
 
 const getChatData = () => {
