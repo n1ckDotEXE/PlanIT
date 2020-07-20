@@ -1,14 +1,16 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-const session = require("express-session");
-var logger = require("morgan");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const logger = require('morgan');
 const models = require("./models");
-var usersRouter = require("./routes/users");
-var chatRoomRouter = require("./routes/chatRoom");
 
-var app = express();
+const usersRouter = require('./routes/users');
+const chatRoomRouter = require("./routes/chatRoom");
+const gardensRouter = require("./routes/gardens")
+
+const app = express();
 const cors = require("cors");
 app.use(logger("dev"));
 app.use(express.json());
@@ -29,6 +31,8 @@ app.use(
 
 app.use("/users", usersRouter);
 app.use("/chatroom", chatRoomRouter);
+app.use("/gardens", gardensRouter);
+
 // catch 404 and forward to error handler
 app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -71,6 +75,6 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  console.log(err);
 });
 module.exports = app;
