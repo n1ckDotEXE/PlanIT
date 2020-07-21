@@ -1,4 +1,4 @@
-const APIURL = "http://localhost:3000";
+const APIURL = "/";
 const axios = require("axios");
 export const getChatRooms = () => axios.get(`${APIURL}/chatroom/chatrooms`);
 
