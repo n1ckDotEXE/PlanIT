@@ -37,9 +37,7 @@ function HomePage() {
 
   return (
     <>
-        <TopBar />
         <div className="home-page">
-          <h1>Join Chat</h1>
           <Formik
             validationSchema={schema}
             onSubmit={handleSubmit}
@@ -54,7 +52,9 @@ function HomePage() {
             isInvalid,
             errors,
           }) => (
-              <Form noValidate onSubmit={handleSubmit}>
+              <Form className="form" noValidate onSubmit={handleSubmit}>
+                <TopBar />
+                <h1>Join Chat</h1>
                 <Form.Row>
                   <Form.Group as={Col} md="7" controlId="Username">
                     <Form.Label></Form.Label>
@@ -86,8 +86,8 @@ function HomePage() {
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>
-                <Button onSubmit={handleSubmit} type="submit" style={{ marginRight: "10px" }}>
-                  Join
+                <Button className="join-button" onSubmit={handleSubmit} type="submit" style={{ marginRight: "10px" }}>
+                  JOIN
                 </Button>
                 </Form>
               )}

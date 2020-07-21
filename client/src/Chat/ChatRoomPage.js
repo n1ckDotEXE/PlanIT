@@ -74,10 +74,10 @@ function ChatRoomPage() {
 
     return (
         <>
-            <TopBar />
             <Container fluid>
                 <div className="chat-room-page">
                     <header1>
+                        <TopBar />  
                         Chat Room: {getChatData().chatRoomName}.&nbsp;&nbsp;&nbsp;&nbsp;Username: {" "} {getChatData().handle}
                     </header1> 
 
