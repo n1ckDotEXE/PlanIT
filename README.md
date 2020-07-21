@@ -17,10 +17,7 @@
 ---
 
 ## 🌲 Introduction:
-
-Something some thing intro here =======================
-
-
+PlanIT is a place for all gardening lovers to showcase and discuss infromation about their gardens. Through PlanIT, you can see the hard work of others while discussing tips and tricks to help you grow your best crops!
 
 ## 👓 Site Preview:
 <p align="center">
@@ -28,6 +25,10 @@ Something some thing intro here =======================
 </p>
 
 ##  ✔️ Features List:
+* Create an account to save your portfolio
+* Add/Remove your garden to share with others
+* Chat with other members through the site
+* View current users and their gardens
 
 ## 🔬 Usage
 ```bash
@@ -47,7 +48,8 @@ npm start
 | Javascript | A programming language that conforms to the ECMAScript specification                                               |
 | Socket.io  | JavaScript library for realtime web applications                                                                   |
 | React      | JavaScript library for building user interfaces                                                                    |
-| PostgreSQL | a free and open-source relational database management system emphasizing extensibility and SQL compliance          |
+| PostgreSQL | Free and open-source relational database management system emphasizing extensibility and SQL compliance            |
+| Heroku     | Cloud platform as a service supporting several programming languages                                               |
 
 ## 📬 Feedback
 Feel free to <a href="https://github.com/n1ckDotEXE/PlanIT/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
