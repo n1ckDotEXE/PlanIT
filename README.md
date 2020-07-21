@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://dc-planit.herokuapp.com/"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
 </p>
-<p align="center"><a href="https://www.dc-planit.herokuapp.com"><b>www.dc-planit.herokuapp.com</b></a></p>
+<p align="center"><a href="https://dc-planit.herokuapp.com"><b>dc-planit.herokuapp.com</b></a></p>
 
 <p align="center">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/chris-bk-song/PlanIT">
