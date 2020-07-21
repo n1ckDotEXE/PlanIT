@@ -3,26 +3,29 @@ import { useParams } from 'react-router-dom';
 import GardenList from '../components/GardenList';
 import Axios from 'axios';
 
-
-
-
 const UserGarden = () => {
-    const [user, setUser] = useState(null)
     const [gardens, setGardens] = useState([])
     const userId = useParams().userId;
+    let gardenArray = []
+    // useEffect(async () => {
+    //     console.log('ffff')
+    //     const data = await Axios.get(`/users/${userId}`)
+    //     .then((res) => {
+    //         console.log(res.data)
+    //         return res.data.Gardens
+    //     })
+    //     // console.log(gardens)
+    //     setGardens(data)
+    // }, [])
+
+    async function fetchData() {
+        const res = await Axios.get(`/users/${userId}`)
+        .then(res => setGardens(res.data.Gardens))
+    }
     useEffect(() => {
-        Axios.get(`/users/${userId}`)
-        .then((res) => {
-            console.log(res.data)
-            setUser(res.data)
-            setGardens(res.data.Gardens)
-        })
-        
-    }, [])
+        fetchData();
+    },[]);
     return <GardenList items={gardens} />
-
 };
-
-
 
 export default UserGarden;

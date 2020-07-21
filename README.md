@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://dc-planit.herokuapp.com/"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
 </p>
-<p align="center"><b>something something Earth ============ </b></p>
+<p align="center"><a href="https://dc-planit.herokuapp.com"><b>dc-planit.herokuapp.com</b></a></p>
 
 <p align="center">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/chris-bk-song/PlanIT">
@@ -17,10 +17,7 @@
 ---
 
 ## 🌲 Introduction:
-
-Something some thing intro here =======================
-
-
+PlanIT is a place for all gardening lovers to showcase and discuss infromation about their gardens. Through PlanIT, you can see the hard work of others while discussing tips and tricks to help you grow your best crops!
 
 ## 👓 Site Preview:
 <p align="center">
@@ -28,6 +25,10 @@ Something some thing intro here =======================
 </p>
 
 ##  ✔️ Features List:
+* Create an account to save your portfolio
+* Add/Remove your garden to share with others
+* Chat with other members through the site
+* View current users and their gardens
 
 ## 🔬 Usage
 ```bash
@@ -37,19 +38,21 @@ npm i
 npm start
 ```
 
-## 🛠️ Programming Languages Utilized:
-| **Language**                         | **Type** | **Function**                                                |
-| ------------------------------------ | -------- | ----------------------------------------------------------- |
-| HTML                                 | Frontend | Rendering webpage layouts                                   |
-| CSS                                  | Frontend | Formatting webpage layouts                                  |
-| Javascript (with Exress and Node.js) | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| SQL (through PostgreSQL)             | Database | Store information pertaining to posts, comments, and logins |
+## 🛠️ Programming Languages and Tools Used:
+| **Tool**   | **Description**                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| HTML       | A standard markup language for documents designed to be displayed in a web browser                                 |
+| CSS        | A style sheet language used for describing the presentation of a document written in a markup language like HTML   |
+| Node.js    | An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser |
+| Express    | A web application framework for Node.js for building web applications and APIs                                     |
+| Javascript | A programming language that conforms to the ECMAScript specification                                               |
+| Socket.io  | JavaScript library for realtime web applications                                                                   |
+| React      | JavaScript library for building user interfaces                                                                    |
+| PostgreSQL | Free and open-source relational database management system emphasizing extensibility and SQL compliance            |
+| Heroku     | Cloud platform as a service supporting several programming languages                                               |
 
 ## 📬 Feedback
-Feel free to <a href="https://github.com/n1ckDotEXE/Seddit/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
+Feel free to <a href="https://github.com/n1ckDotEXE/PlanIT/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
 
 ## 🎉 Credits:
 <p align="center">

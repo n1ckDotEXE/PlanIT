@@ -66,7 +66,8 @@ router.get('/:id', (req, res) => {
   db.Users.findByPk(
     req.params.id,
    {
-     include: [db.Gardens]
+     include: [db.Gardens],
+     order: [[db.Gardens, "createdAt", "DESC"]]
    } 
   )
   .then(users => {
