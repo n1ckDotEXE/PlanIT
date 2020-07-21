@@ -3,8 +3,24 @@ import Card from '../../shared/components/UIElements/Card';
 import GardenItem from './GardenItem';
 import Button from '../../shared/components/FormElements/Button';
 import './GardenList.css';
+import { useSelector } from "react-redux";
+
+
 
 const GardenList = props => {
+    // const gardens = useSelector(state => state.gardens)
+    // console.log(props.items)
+    // console.log(gardens)
+    // if (props.items.length === 0) {
+    //     return (
+    //         <div className="garden-list center">
+    //             <Card>
+    //                 <h2>No Gardens found. You should create one!</h2>
+    //                 <Button to="/garden/new">Share Items</Button>
+    //             </Card>
+    //         </div>
+    //     );
+    // }
     if (props.items.length === 0) {
         return (
             <div className="garden-list center">
@@ -15,21 +31,22 @@ const GardenList = props => {
             </div>
         );
     }
-
     return (
         <ul className="garden-list">
-            {props.items.map(garden => (
+            {props.items.map(garden => {
+                return (
                 <GardenItem
                     key={garden.id}
                     id={garden.id}
-                    // image={garden.imageUrl}
+                    image='https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
                     title={garden.title}
                     description={garden.description}
                     address={garden.address}
                     creatorId={garden.creator}
                     coordinates={garden.location}
                 />
-            ))}
+                )
+            })}
         </ul>
     );
 };
