@@ -5,7 +5,7 @@
 <p align="center">
 <a href="https://dc-planit.herokuapp.com/"><img src="https://github.com/chris-bk-song/PlanIT/blob/master/client/img/logo200.png?raw=true"></a>
 </p>
-<p align="center"><b>something something Earth ============ </b></p>
+<p align="center"><a href="https://www.dc-planit.herokuapp.com"><b>www.dc-planit.herokuapp.com</b></a></p>
 
 <p align="center">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/chris-bk-song/PlanIT">
@@ -37,19 +37,18 @@ npm i
 npm start
 ```
 
-## 🛠️ Programming Languages Utilized:
-| **Language**                         | **Type** | **Function**                                                |
-| ------------------------------------ | -------- | ----------------------------------------------------------- |
-| HTML                                 | Frontend | Rendering webpage layouts                                   |
-| CSS                                  | Frontend | Formatting webpage layouts                                  |
-| Javascript (with Exress and Node.js) | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| Javascript (with Node.js)            | Backend  | Perform functions to manipulate the website                 |
-| SQL (through PostgreSQL)             | Database | Store information pertaining to posts, comments, and logins |
+## 🛠️ Programming Languages and Tools:
+| **Language**                          | **Description**                                                                                                  |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| HTML                                  | A standard markup language for documents designed to be displayed in a web browser                               |
+| CSS                                   | A style sheet language used for describing the presentation of a document written in a markup language like HTML |
+| Javascript (with Express and Node.js) | A programming language that conforms to the ECMAScript specification                                             |
+| Socket.io                             | JavaScript library for realtime web applications                                                                 |
+| React (with Node.js)                  | JavaScript library for building user interfaces                                                                  |
+| SQL (through PostgreSQL)              | a free and open-source relational database management system emphasizing extensibility and SQL compliance        |
 
 ## 📬 Feedback
-Feel free to <a href="https://github.com/n1ckDotEXE/Seddit/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
+Feel free to <a href="https://github.com/n1ckDotEXE/PlanIT/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
 
 ## 🎉 Credits:
 <p align="center">
