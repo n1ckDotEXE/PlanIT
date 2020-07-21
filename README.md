@@ -37,15 +37,17 @@ npm i
 npm start
 ```
 
-## 🛠️ Programming Languages and Tools:
-| **Language**                          | **Description**                                                                                                  |
-| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| HTML                                  | A standard markup language for documents designed to be displayed in a web browser                               |
-| CSS                                   | A style sheet language used for describing the presentation of a document written in a markup language like HTML |
-| Javascript (with Express and Node.js) | A programming language that conforms to the ECMAScript specification                                             |
-| Socket.io                             | JavaScript library for realtime web applications                                                                 |
-| React (with Node.js)                  | JavaScript library for building user interfaces                                                                  |
-| SQL (through PostgreSQL)              | a free and open-source relational database management system emphasizing extensibility and SQL compliance        |
+## 🛠️ Programming Languages and Tools Used:
+| **Tool**   | **Description**                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------ |
+| HTML       | A standard markup language for documents designed to be displayed in a web browser                                 |
+| CSS        | A style sheet language used for describing the presentation of a document written in a markup language like HTML   |
+| Node.js    | An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser |
+| Express    | A web application framework for Node.js for building web applications and APIs                                     |
+| Javascript | A programming language that conforms to the ECMAScript specification                                               |
+| Socket.io  | JavaScript library for realtime web applications                                                                   |
+| React      | JavaScript library for building user interfaces                                                                    |
+| PostgreSQL | a free and open-source relational database management system emphasizing extensibility and SQL compliance          |
 
 ## 📬 Feedback
 Feel free to <a href="https://github.com/n1ckDotEXE/PlanIT/issues/new">file an issue</a> through our Github repository. All feedback is welcome!
