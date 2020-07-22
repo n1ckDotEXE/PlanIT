@@ -27,10 +27,11 @@ const Users = () => {
                 footer={<Button onClick={closeIntroductionHandler}>X</Button>}
             >
                 <p>
-                    <center>PlanIT is where gardeners from around the world come to learn, teach, and further their gardening knowledge. Share your personal experiences while also helping others along the way.<b> Please be kind to your fellow gardeners! Welcome to PlanIT and Happy Gardening!</b> </center>
+                    <center>PlanIT is where gardeners from around the world come to learn, teach, and further their gardening knowledge. 
+                        Share your personal experiences while also helping others along the way.<b> Please be kind to your fellow gardeners! Welcome to PlanIT and Happy Gardening!</b> </center>
                 </p>
             </Modal>
-            <UsersList items={users} />;
+            <UsersList items={users} />
         </>
     )
 };

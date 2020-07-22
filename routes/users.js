@@ -65,17 +65,18 @@ router.get('/', (req, res) => {
 router.get('/current', (req, res) => {
   if (!req.session.user) {
     res.status(401).json("not authorized")
-  }
-  db.Users.findByPk(
-    req.session.user.id,
-    {
-      include: [db.Gardens],
-      order: [[db.Gardens, "createdAt", "DESC"]]
-    }
+  } else (
+    db.Users.findByPk(
+      req.session.user.id,
+      {
+        include: [db.Gardens],
+        order: [[db.Gardens, "createdAt", "DESC"]]
+      }
+    )
+      .then(users => {
+        res.status(200).json(users)
+      })
   )
-    .then(users => {
-      res.status(200).json(users)
-    })
 })
 
 router.get('/:id', (req, res) => {
