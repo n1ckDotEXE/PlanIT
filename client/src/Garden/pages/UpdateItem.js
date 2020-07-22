@@ -9,39 +9,15 @@ import {
 } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
 import './FormItem.css';
+import Axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
-const DUMMY_PLACES = [
-    {
-        id: 'p1',
-        title: 'Leafy Lettuce Lanes',
-        description: 'The king of head lettuce!',
-        imageUrl:
-            'https://images.pexels.com/photos/89267/pexels-photo-89267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-        address: '20 W 34th St, New York, NY 10001',
-        location: {
-            lat: 40.7484405,
-            lng: -73.9878584
-        },
-        creator: 'u1'
-    },
-    {
-        id: 'p2',
-        title: 'Green Thumb Tom',
-        description: 'Old school with Old time!',
-        imageUrl:
-            'https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-        address: '20 W 34th St, New York, NY 10001',
-        location: {
-            lat: 40.7484405,
-            lng: -73.9878584
-        },
-        creator: 'u2'
-    }
-];
 
 const UpdateItem = () => {
     const [isLoading, setIsLoading] = useState(true)
     const itemId = useParams().itemId;
+    const history = useHistory();
+    const [item, setItem] = useState(null)
     const [formState, inputHandler, setFormData] = useForm(
         {
             title: {
@@ -51,38 +27,57 @@ const UpdateItem = () => {
             description: {
                 value: '',
                 isValid: false
+            },
+            address: {
+                value: '',
+                isValid: false
             }
         },
         false
     );
 
-    const identifiedItem = DUMMY_PLACES.find(p => p.id === itemId);
-
     useEffect(() => {
-        if (identifiedItem) {
-            setFormData({
-                title: {
-                    value: identifiedItem.title,
-                    isValid: true
+        Axios.get(`/gardens/list/${itemId}`)
+        .then(res => {
+            if(res.data) {
+                setItem(res.data)
+                setFormData({
+                    title: {
+                        value: res.data.title,
+                        isValid: true
+                    },
+                    description: {
+                        value: res.data.description,
+                        isValid: true
+                    },
+                    address: {
+                        value: res.data.address,
+                        isValid: true
+                    }
                 },
-                description: {
-                    value: identifiedItem.description,
-                    isValid: true
-                }
-            },
-                true
-            );
-        }
+                    true
+                );    
+            }
+        })
         setIsLoading(false);
-    }, [setFormData, identifiedItem]);
+    }, []);
 
 
     const itemUpdateSubmitHandler = event => {
         event.preventDefault();
         console.log(formState.inputs)
+        Axios.put(`/garden/list/${itemId}`, {
+            title: formState.inputs.title.value,
+            description: formState.inputs.description.value,
+            address: formState.inputs.address.value,
+        })
+        .then((res) => {
+            console.log(res)
+            history.push(`/users/${res.data.userId}/gardens`)
+        })
     };
 
-    if (!identifiedItem) {
+    if (!item) {
         return (
             <div className="center">
                 <Card>
@@ -112,6 +107,16 @@ const UpdateItem = () => {
                 onInput={inputHandler}
                 initialValue={formState.inputs.title.value}
                 initialValid={formState.inputs.title.isValid}
+            />
+            <Input
+                id="address"
+                element="input"
+                label="Address"
+                validators={[VALIDATOR_REQUIRE()]}
+                errorText="Please enter a valid address."
+                onInput={inputHandler}
+                initialValue={formState.inputs.address.value}
+                initialValid={formState.inputs.address.isValid}
             />
             <Input
                 id="description"

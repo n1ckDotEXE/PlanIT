@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 const GardenItem = props => {
     const auth = useContext(AuthContext);
-    const history = useHistory;
+    const history = useHistory();
     const [showMap, setShowMap] = useState(false);
     
     const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -30,17 +30,9 @@ const GardenItem = props => {
         Axios.delete(`/gardens/list/${listid}`)
         window.location.reload();
     }; 
-    // const confirmUpdateHandler = (listid) => {
-    //     Axios.put(`/garden/list/${listid}`, {
-    //         title: title,
-    //         description: description,
-    //         address: address,
-    //     })
-    //     .then((res) => {
-    //         console.log(res)
-    //         history.push(`/users/${res.data.userId}/gardens`)
-    //     })
-    // }
+    const confirmUpdateHandler = (listid) => {
+        history.push(`/garden/${listid}`)
+    }
 
     return (
         <React.Fragment>
@@ -83,9 +75,9 @@ const GardenItem = props => {
                     </div>
                     <div className="garden-item__actions">
                         <Button inverse onClick={openMapHandler}>VIEW ON MAP</Button>
-                        {/* {auth.isLoggedIn && (
+                        {auth.isLoggedIn && (
                             <Button onClick={() => confirmUpdateHandler(props.id)}>EDIT</Button>
-                        )} */}
+                        )}
                         {auth.isLoggedIn && (
                             <Button danger onClick={showDeleteWarningHandler}>DELETE</Button>
                         )}

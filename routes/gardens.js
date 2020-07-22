@@ -4,6 +4,15 @@ const router = express.Router();
 
 router.use(express.static('./public'));
 
+router.get('/list/:id', (req,res) => {
+  db.Gardens.findByPk(
+    req.params.id
+  )
+  .then((garden) => {
+    res.status(201).json(garden)
+  })
+})
+
 router.post('/list', (req,res) => {
   const { title, address, description } = req.body;
 
