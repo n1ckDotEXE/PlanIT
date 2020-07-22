@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
@@ -11,9 +11,11 @@ import { useForm } from '../../shared/hooks/form-hook';
 import './FormItem.css';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { AuthContext } from '../../shared/context/auth-context';
 
 
 const UpdateItem = () => {
+    const auth = useContext(AuthContext);
     const [isLoading, setIsLoading] = useState(true)
     const itemId = useParams().itemId;
     const history = useHistory();
@@ -66,14 +68,14 @@ const UpdateItem = () => {
     const itemUpdateSubmitHandler = event => {
         event.preventDefault();
         console.log(formState.inputs)
-        Axios.put(`/garden/list/${itemId}`, {
+        Axios.put(`/gardens/list/${itemId}`, {
             title: formState.inputs.title.value,
             description: formState.inputs.description.value,
             address: formState.inputs.address.value,
         })
         .then((res) => {
             console.log(res)
-            history.push(`/users/${res.data.userId}/gardens`)
+            history.push(`/users/${auth.user.id}/gardens`)
         })
     };
 
