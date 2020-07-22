@@ -38,10 +38,10 @@ const NewItem = () => {
             description: formState.inputs.description.value,
             address: formState.inputs.address.value,
         })
-        .then((res) => {
-            console.log(res)
-            history.push(`/users/${res.data.userId}/gardens`)
-        })
+            .then((res) => {
+                console.log(res)
+                history.push(`/users/${res.data.userId}/gardens`)
+            })
     };
 
     return (
@@ -56,14 +56,6 @@ const NewItem = () => {
                 onInput={inputHandler}
             />
             <Input
-                id="description"
-                element="textarea"
-                label="Description"
-                validators={[VALIDATOR_MINLENGTH(5)]}
-                errorText="Please enter a valid description (at least 5 characters)."
-                onInput={inputHandler}
-            />
-            <Input
                 id="address"
                 element="input"
                 label="Address"
@@ -71,9 +63,17 @@ const NewItem = () => {
                 errorText="Please enter a valid address."
                 onInput={inputHandler}
             />
-                <Button type="submit" disabled={!formState.isValid}>
-                    ADD Item
-                </Button>
+            <Input
+                id="description"
+                element="textarea"
+                label="Description"
+                validators={[VALIDATOR_MINLENGTH(5)]}
+                errorText="Please enter a valid description (at least 5 characters)."
+                onInput={inputHandler}
+            />
+            <Button type="submit" disabled={!formState.isValid}>
+                ADD Item
+            </Button>
         </form>
     );
 };
