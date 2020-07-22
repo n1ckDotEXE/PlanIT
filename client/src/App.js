@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -29,10 +29,20 @@ const App = () => {
 
   const logout = useCallback(() => {
     Axios.get('/users/auth/logout')
-    .then(() => {
-      setIsLoggedIn(false);
-      setUser(null)
-    })
+      .then(() => {
+        setIsLoggedIn(false);
+        setUser(null)
+      })
+  }, []);
+
+  useEffect(() => {
+    Axios.get('/users/current')
+      .then((res) => {
+        if (res.status == 200) {
+          setUser(res.data)
+          setIsLoggedIn(true);
+        }
+      })
   }, []);
 
   let routes;

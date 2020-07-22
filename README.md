@@ -21,7 +21,7 @@ PlanIT is a place for all gardening lovers to showcase and discuss infromation a
 
 ## 👓 Site Preview:
 <p align="center">
-<img width=100% height=100% src="https://i.imgur.com/4Nh9tXd.png">
+<img width=100% height=100% src="https://github.com/n1ckDotEXE/PlanIT/blob/master/client/img/readme-animation.gif">
 </p>
 
 ##  ✔️ Features List:
