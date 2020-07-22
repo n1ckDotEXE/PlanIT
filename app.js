@@ -36,7 +36,7 @@ app.use("/gardens", gardensRouter);
 // catch 404 and forward to error handler
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get((req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client/build/index.html"));
 });
 
@@ -57,15 +57,15 @@ io.on("connection", (socket) => {
     const chatRoom = await models.ChatRoom.findAll({
       where: { name: chatRoomName },
     });
-    
+
     const chatRoomId = chatRoom[0].id;
     const chatMessage = await models.ChatMessage.create({
       chatRoomId,
       author,
       message: message,
     });
-    
-    io.emit("newMessage", {chatMessage});
+
+    io.emit("newMessage", { chatMessage });
   });
 });
 
