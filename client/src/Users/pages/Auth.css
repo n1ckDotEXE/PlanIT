@@ -1,15 +1,26 @@
 .authentication__header {
-color: white;
-text-align: center;
+  color: white;
+  text-align: center;
 }
 
 .authentication {
-width: 90%;
-max-width: 35rem;
-margin: 7rem auto;
-text-align: center;
+  width: 90%;
+  max-width: 35rem;
+  margin: 7rem auto;
+  text-align: center;
 }
 
 .authentication form {
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+}
+
+.authentication form Input {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.form-control label {
+  width: 150px;
 }

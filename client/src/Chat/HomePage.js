@@ -53,7 +53,7 @@ function HomePage() {
             errors,
           }) => (
               <Form className="form" noValidate onSubmit={handleSubmit}>
-                <TopBar />
+                {/* <TopBar /> */}
                 <h1>Join Chat</h1>
                 <Form.Row>
                   <Form.Group as={Col} md="7" controlId="Username">

@@ -46,6 +46,7 @@ const NewItem = () => {
 
     return (
         <form className="item-form" onSubmit={itemSubmitHandler}>
+            <h1>Add your garden</h1>
             <Input
                 id="title"
                 element="input"
