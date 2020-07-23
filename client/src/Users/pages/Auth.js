@@ -73,7 +73,7 @@ const Auth = (props) => {
 
     return (
         <Card className="authentication">
-            <h2>Login Required</h2>
+            <h2>Login / Register</h2>
             <hr />
             <form>
                 {!isLoginMode &&
