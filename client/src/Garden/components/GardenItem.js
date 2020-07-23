@@ -74,7 +74,7 @@ const GardenItem = props => {
                         <p>{props.description}</p>
                     </div>
                     <div className="garden-item__actions">
-                        <Button inverse onClick={openMapHandler}>VIEW ON MAP</Button>
+                        {/* <Button inverse onClick={openMapHandler}>VIEW ON MAP</Button> */}
                         {auth.isLoggedIn && (
                             <Button onClick={() => confirmUpdateHandler(props.id)}>EDIT</Button>
                         )}
