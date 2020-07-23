@@ -19,6 +19,8 @@ outline: none;
 .button:active {
 background: #99b898;
 border-color: #99b898;
+transition: .3s;
+transform: scale(1.1);
 }
 
 .button--inverse {
@@ -50,6 +52,8 @@ background: #ccc;
 color: #979797;
 border-color: #ccc;
 cursor: not-allowed;
+transition: .1s;
+transform: scale(1.0);
 }
 
 .button--small {
